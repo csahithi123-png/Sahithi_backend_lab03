@@ -4,6 +4,8 @@
 **Registration Number:** 252U1R1062  
 **Section:** CSE-2A
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/csahithi123-png/Sahithi_backend_lab03)
+
 A complete Node.js + Express + SQLite implementation of Lab 3, continued from the Lab 2 `book` table approach.
 
 ## Requirements covered
