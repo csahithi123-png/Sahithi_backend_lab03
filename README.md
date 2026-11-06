@@ -2,11 +2,36 @@
 
 **Student Name:** C. SAHITHI  
 **Registration Number:** 252U1R1062  
-**Section:** CSE-2A
+**Section:** CSE-2A  
+
+**Live Deployed URL (Render):** [https://sahithi-backend-lab03.onrender.com](https://sahithi-backend-lab03.onrender.com)  
+**GitHub Repository:** [https://github.com/csahithi123-png/Sahithi_backend_lab03](https://github.com/csahithi123-png/Sahithi_backend_lab03)  
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/csahithi123-png/Sahithi_backend_lab03)
 
 A complete Node.js + Express + SQLite implementation of Lab 3, continued from the Lab 2 `book` table approach.
+
+---
+
+## Live Deployment Links (Render)
+
+| Task / Feature | Method | Live Deployed URL |
+|---|---|---|
+| **API Health & Endpoints** | `GET` | [https://sahithi-backend-lab03.onrender.com/](https://sahithi-backend-lab03.onrender.com/) |
+| **Task 1: List all books** | `GET` | [https://sahithi-backend-lab03.onrender.com/books](https://sahithi-backend-lab03.onrender.com/books) |
+| **Task 1: Get single book** | `GET` | [https://sahithi-backend-lab03.onrender.com/books/1](https://sahithi-backend-lab03.onrender.com/books/1) |
+| **Task 1: Create book** | `POST` | `https://sahithi-backend-lab03.onrender.com/books` |
+| **Task 1: Update book** | `PUT` | `https://sahithi-backend-lab03.onrender.com/books/1` |
+| **Task 1: Delete book** | `DELETE` | `https://sahithi-backend-lab03.onrender.com/books/1` |
+| **Task 2: Title search (`search_q`)** | `GET` | [https://sahithi-backend-lab03.onrender.com/books?search_q=the](https://sahithi-backend-lab03.onrender.com/books?search_q=the) |
+| **Task 2: Sort by price DESC** | `GET` | [https://sahithi-backend-lab03.onrender.com/books?order_by=price&order=DESC](https://sahithi-backend-lab03.onrender.com/books?order_by=price&order=DESC) |
+| **Task 2: Pagination (limit & offset)** | `GET` | [https://sahithi-backend-lab03.onrender.com/books?limit=5&offset=0](https://sahithi-backend-lab03.onrender.com/books?limit=5&offset=0) |
+| **Task 2: Pagination (page 2)** | `GET` | [https://sahithi-backend-lab03.onrender.com/books?limit=5&offset=5](https://sahithi-backend-lab03.onrender.com/books?limit=5&offset=5) |
+| **Task 3: Price range filter** | `GET` | [https://sahithi-backend-lab03.onrender.com/books?min_price=200&max_price=500](https://sahithi-backend-lab03.onrender.com/books?min_price=200&max_price=500) |
+| **Task 3: Combined Search & Filter** | `GET` | [https://sahithi-backend-lab03.onrender.com/books?search_q=the&order_by=price&order=DESC&min_price=200&max_price=600&limit=5&offset=0](https://sahithi-backend-lab03.onrender.com/books?search_q=the&order_by=price&order=DESC&min_price=200&max_price=600&limit=5&offset=0) |
+| **Task 5: Missing book (404 error)** | `GET` | [https://sahithi-backend-lab03.onrender.com/books/99999](https://sahithi-backend-lab03.onrender.com/books/99999) |
+| **Task 6: Invalid sort (400 error)** | `GET` | [https://sahithi-backend-lab03.onrender.com/books?order_by=invalid](https://sahithi-backend-lab03.onrender.com/books?order_by=invalid) |
+| **Task 6: Invalid price range (400)** | `GET` | [https://sahithi-backend-lab03.onrender.com/books?min_price=500&max_price=100](https://sahithi-backend-lab03.onrender.com/books?min_price=500&max_price=100) |
 
 ## Requirements covered
 
@@ -77,41 +102,68 @@ Allowed `order_by`: `id`, `title`, `author`, `price`. Allowed `order`: `ASC`, `D
 
 Import `postman/Lab-03-Books-API.postman_collection.json` into Postman. Set `baseUrl` to `http://localhost:3000` if needed. Run requests in the collection. The collection includes successful and failure cases for list/search/filter, CRUD, validation, invalid sort/pagination, and missing IDs.
 
-### Screenshots
-1.	Name the endpoints as nouns (/books) and use the HTTP method to show the action.
+### Task Screenshots & Live URLs
+
+#### 1. Name the endpoints as nouns (`/books`) and use the HTTP method to show the action:
+- **Live Root Endpoint:** [https://sahithi-backend-lab03.onrender.com/](https://sahithi-backend-lab03.onrender.com/)
+- **Live List Books (`GET /books`):** [https://sahithi-backend-lab03.onrender.com/books](https://sahithi-backend-lab03.onrender.com/books)
+- **Live Single Book (`GET /books/:id`):** [https://sahithi-backend-lab03.onrender.com/books/1](https://sahithi-backend-lab03.onrender.com/books/1)
+- **Live Create (`POST /books`):** `https://sahithi-backend-lab03.onrender.com/books`
+- **Live Update (`PUT /books/:id`):** `https://sahithi-backend-lab03.onrender.com/books/1`
+- **Live Delete (`DELETE /books/:id`):** `https://sahithi-backend-lab03.onrender.com/books/1`
 
 ![alt text](image.png)
 ![alt text](image-1.png)
 
-2.	Add query parameters to GET /books/: search_q (partial title match with LIKE), order_by, order (ASC/DESC), limit and offset, each with a default value.
+#### 2. Add query parameters to `GET /books/`: `search_q` (partial title match with `LIKE`), `order_by`, `order` (ASC/DESC), `limit` and `offset`, each with a default value:
+- **Live Partial Title Search (`?search_q=the`):** [https://sahithi-backend-lab03.onrender.com/books?search_q=the](https://sahithi-backend-lab03.onrender.com/books?search_q=the)
+- **Live Sort by Price (`?order_by=price&order=DESC`):** [https://sahithi-backend-lab03.onrender.com/books?order_by=price&order=DESC](https://sahithi-backend-lab03.onrender.com/books?order_by=price&order=DESC)
+- **Live Pagination (`?limit=5&offset=0`):** [https://sahithi-backend-lab03.onrender.com/books?limit=5&offset=0](https://sahithi-backend-lab03.onrender.com/books?limit=5&offset=0)
+- **Live Pagination Page 2 (`?limit=5&offset=5`):** [https://sahithi-backend-lab03.onrender.com/books?limit=5&offset=5](https://sahithi-backend-lab03.onrender.com/books?limit=5&offset=5)
+
 ![alt text](image-2.png)
 
-3.	Add a price-range filter, for example min_price and max_price using BETWEEN or two conditions.
+#### 3. Add a price-range filter, for example `min_price` and `max_price` using `BETWEEN` or two conditions:
+- **Live Price Range ($200 to $500):** [https://sahithi-backend-lab03.onrender.com/books?min_price=200&max_price=500](https://sahithi-backend-lab03.onrender.com/books?min_price=200&max_price=500)
+- **Live Combined Query:** [https://sahithi-backend-lab03.onrender.com/books?search_q=the&order_by=price&order=DESC&min_price=200&max_price=600&limit=5&offset=0](https://sahithi-backend-lab03.onrender.com/books?search_q=the&order_by=price&order=DESC&min_price=200&max_price=600&limit=5&offset=0)
+
 ![alt text](image-3.png)
 ![alt text](image-4.png)
 
-4.	Validate the POST body: reject missing title, author or a non-numeric price with 400 and a clear JSON message.
+#### 4. Validate the POST body: reject missing title, author or a non-numeric price with 400 and a clear JSON message:
+- **Target URL:** `POST https://sahithi-backend-lab03.onrender.com/books`
+- **Missing Title (400 Bad Request):** `{ "author": "C. SAHITHI", "price": 399 }`
+- **Invalid Price (400 Bad Request):** `{ "title": "Node.js Guide", "author": "C. SAHITHI", "price": "invalid" }`
+
 ![alt text](image-5.png)
 ![alt text](image-6.png)
 
-5.	Return 201 after create, 200 after update and delete, and 404 when the id does not exist.
+#### 5. Return 201 after create, 200 after update and delete, and 404 when the id does not exist:
+- **Single Book (200 OK):** [https://sahithi-backend-lab03.onrender.com/books/1](https://sahithi-backend-lab03.onrender.com/books/1)
+- **Missing Book ID (404 Not Found):** [https://sahithi-backend-lab03.onrender.com/books/99999](https://sahithi-backend-lab03.onrender.com/books/99999)
+- **Create Book (201 Created):** `POST https://sahithi-backend-lab03.onrender.com/books`
+- **Update Book (200 OK):** `PUT https://sahithi-backend-lab03.onrender.com/books/1`
+- **Delete Book (200 OK):** `DELETE https://sahithi-backend-lab03.onrender.com/books/10`
+
 ![alt text](image-7.png)
 ![alt text](image-8.png)
 ![alt text](image-9.png)
 
-6.	Make the response format consistent, for example { "message": "..." } for errors.
+#### 6. Make the response format consistent, for example `{ "message": "..." }` for errors:
+- **Live Invalid Sort Column (400 Bad Request):** [https://sahithi-backend-lab03.onrender.com/books?order_by=unknown](https://sahithi-backend-lab03.onrender.com/books?order_by=unknown)
+- **Live Inverted Range Error (400 Bad Request):** [https://sahithi-backend-lab03.onrender.com/books?min_price=500&max_price=100](https://sahithi-backend-lab03.onrender.com/books?min_price=500&max_price=100)
+
 ![alt text](image-10.png)
 
-
-7.	Debugging exercise: the faculty hands out a broken version of the project. Students fix a port conflict (EADDRINUSE), a wrong import path, a table-name typo (no such table) and a missing await.
+#### 7. Debugging exercise: the faculty hands out a broken version of the project. Students fix a port conflict (EADDRINUSE), a wrong import path, a table-name typo (no such table) and a missing await:
  
- for create method:
- ![alt text](image-11.png)
+For create method:
+![alt text](image-11.png)
 
-for update and delete
+For update and delete:
 ![alt text](image-12.png)
 
-for missing id:
+For missing ID:
 ![alt text](image-13.png)
 
 ### Sample request body

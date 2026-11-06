@@ -1,6 +1,7 @@
 # Postman Test List
 
-Base URL: `http://localhost:3000`
+- **Live Deployed Base URL (Render):** `https://sahithi-backend-lab03.onrender.com`
+- **Local Base URL:** `http://localhost:3000`
 
 | # | Request | Expected |
 |---|---|---|
